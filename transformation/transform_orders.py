@@ -69,6 +69,11 @@ monthly_revenue = df.groupBy(date_format("order_purchase_timestamp", "yyyy-MM").
 # Actions
 
 revenue_by_state.show()
+avg_delivery.show()
+revenue_by_payment.show()
+monthly_revenue.show()
+
+
 
 
 
