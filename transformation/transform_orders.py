@@ -73,6 +73,19 @@ avg_delivery.show()
 revenue_by_payment.show()
 monthly_revenue.show()
 
+print("Saving results...")
+
+output_path = "data/curated/"
+
+revenue_by_state.write.mode("overwrite").parquet(f"{output_path}revenue_by_state")
+revenue_by_payment.write.mode("overwrite").parquet(f"{output_path}revenue_by_payment")
+monthly_revenue.write.mode("overwrite").parquet(f"{output_path}monthly_revenue")
+
+print("All results saved to data/curated/")
+print("Transformation complete!")
+
+spark.stop()
+
 
 
 
