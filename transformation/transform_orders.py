@@ -2,6 +2,9 @@ import os
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import (col, datediff, to_timestamp, round, avg, count, sum, date_format)
 
+os.environ["HADOOP_HOME"] = "C:\\hadoop"
+os.environ["PATH"] += ";C:\\hadoop\\bin"
+
 spark = SparkSession.builder\
         .appName("EcEcommerce Pipeline Transformation")\
         .getOrCreate()
