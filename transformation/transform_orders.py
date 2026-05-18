@@ -80,9 +80,9 @@ print("Saving results...")
 
 output_path = "data/curated/"
 
-revenue_by_state.write.mode("overwrite").parquet(f"{output_path}revenue_by_state")
-revenue_by_payment.write.mode("overwrite").parquet(f"{output_path}revenue_by_payment")
-monthly_revenue.write.mode("overwrite").parquet(f"{output_path}monthly_revenue")
+revenue_by_state.toPandas().to_csv(f"{output_path}revenue_by_state.csv", index=False)
+revenue_by_payment.toPandas().to_csv(f"{output_path}revenue_by_payment.csv", index=False)
+monthly_revenue.toPandas().to_csv(f"{output_path}monthly_revenue.csv", index=False)
 
 print("All results saved to data/curated/")
 print("Transformation complete!")

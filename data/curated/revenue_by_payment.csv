@@ -1,0 +1,7 @@
+payment_type,total_revenue,total_orders
+credit_card,15694885.84,87286
+boleto,4086820.71,23037
+voucher,432602.19,6407
+debit_card,256417.92,1698
+not_defined,0.0,3
+,,3
