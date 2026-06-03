@@ -6,18 +6,18 @@ load_dotenv()
 
 DATA_PATH = "D:\DE- PROJECT\ecommerc_pipeline\data"
 
-AWS_ACCESS_KEY = os.getenv("S3_AWS_ACCESS_KEY")
-AWS_SECRET_KEY = os.getenv("S3_AWS_SECRET_KEY")
-AWS_REGION = os.getenv("S3_AWS_REGION")
+AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_REGION = os.getenv("AWS_REGION")
 BUCKET_NAME = os.getenv("S3_BUCKET_NAME")
 
 def upload_files_s3():
     
     s3_client = boto3.client(
         "s3",
-        aws_access_key = AWS_ACCESS_KEY,
-        aws_secret_key = AWS_SECRET_KEY,
-        aws_region = AWS_REGION
+        aws_access_key_id  = AWS_ACCESS_KEY,
+        aws_secret_access_key  = AWS_SECRET_KEY,
+        region_name  = AWS_REGION
     )
 
     for filename in os.listdir(DATA_PATH):
